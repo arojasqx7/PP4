@@ -1,0 +1,192 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage2.master.vb" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> Admin Proyecto </title>
+    <meta charset="utf-8"/>
+    <meta name="robots" content="all,follow"/>
+    <meta name="googlebot" content="index,follow,snippet,archive"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="keywords" content=""/>
+    <meta name="keywords" content=""/>
+
+    <!-- styles -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/animate.min.css" rel="stylesheet"/>
+    <link href="css/owl.carousel.css" rel="stylesheet"/>
+    <link href="css/owl.theme.css" rel="stylesheet"/>
+    <link href="css/style.default.css" rel="stylesheet"/>
+    <link href="css/custom.css" rel="stylesheet"/>
+
+     <!-- scripts -->
+    <script src="js/respond.min.js"></script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap-hover-dropdown.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/front.js"></script>
+    <link rel="shortcut icon" href="favicon.png"/>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            left: -1px;
+            top: 4px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <form id="form1" runat="server">
+    <div>
+        
+                <!-- *** MENU *** -->
+    <div id="top">
+        <div class="container">
+            <div class="col-md-6 offer" data-animate="fadeInDown">
+                <p>Llámanos ahora: (506) 8888-8888 / (506) 2222-2222</p>
+            </div>
+            <div class="col-md-6" data-animate="fadeInDown">
+                <ul class="menu">
+                    <li><a href="Inicio.aspx">Inicio</a>
+                    </li>
+                    <li><a href="Registrarse.aspx">Registrarse</a>  <!-- Test lnk -->
+                    </li>
+                    <li><a href="Contacto.aspx">Contáctenos</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- *** FIN LOGIN *** -->
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+ <!-- *** FOOTER ***
+ _________________________________________________________ -->
+        <div id="footer" data-animate="fadeInUp">
+            <div class="container">
+                <div class="row">
+                    <div class="auto-style1">
+                        <h4>Páginas</h4>
+
+                        <ul>
+                            <li><a href="#">Inicio</a>
+                            </li>
+                            <li><a href="QuienesSomos.aspx">¿Quiénes somos?</a>
+                            </li>
+                            <li><a href="FAQ.aspx">Preguntas Frecuentes</a>
+                            </li>
+                            <li><a href="Contacto.aspx">Contáctenos</a>
+                            </li>
+                        </ul>
+
+                        <hr/>
+
+                        <h4>Usuario</h4>
+
+                        <ul>
+                            <li><a href="Login.aspx">Login</a>
+                            </li>
+                            <li><a href="Registrarse.aspx">Registrarse</a>
+                            </li>
+                        </ul>
+
+                        <hr class="hidden-md hidden-lg hidden-sm"/>
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Categorías</h4>
+
+                        <ul>
+                             <li><a href="FrutasAcidas.aspx"><strong>Frutas</strong></a></li>
+                             <li><a href="VerdurasVerde1.aspx"><strong>Verduras</strong></a></li>
+                             <li><a href="CarneRes.aspx"><strong>Carnes</strong></a></li>
+                             <li><a href="PanDulce.aspx"><strong>Panadería</strong></a></li>
+                        </ul>
+
+                        <hr class="hidden-md hidden-lg">
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Direccion</h4>
+
+                        <p><strong>Proyecto Ltda.</strong>
+                            <br>San José
+                            <br>Calle Blancos
+                            <br>Costa Rica
+                            <br>
+                            <strong>América Central</strong>
+                        </p>
+
+                        <hr class="hidden-md hidden-lg">
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                    <div class="col-md-3 col-sm-6">
+
+                        <h4>Síguenos</h4>
+
+                        <p class="social">
+                            <a href="#" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="email external" data-animate-hover="shake"><i class="fa fa-envelope"></i></a>
+                        </p>
+
+                    </div>
+                    <!-- /.col-md-3 -->
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#footer -->
+
+        <!-- *** FOOTER END *** -->
+
+        <!-- *** COPYRIGHT ***
+ _________________________________________________________ -->
+        <div id="copyright">
+            <div class="container">
+                <div class="col-md-6">
+                    <p class="pull-left">© Proyecto Progra 4.</p>
+
+                </div>
+                <div class="col-md-6">
+                    <p class="pull-right"> <strong>Hecho por:</strong> Andrés, Andrey, Gabriel, Rodolfo</p>
+                </div>
+            </div>
+        </div>
+        <!-- *** COPYRIGHT END *** -->
+
+
+
+    </div>
+    <!-- /#all -->
+
+    </form>
+
+     <asp:ContentPlaceHolder id="ContentPlaceHolderFooter" runat="server">
+        </asp:ContentPlaceHolder>
+</body>
+</html>
