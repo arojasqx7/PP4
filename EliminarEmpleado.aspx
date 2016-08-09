@@ -41,11 +41,7 @@
             <div class="container">
 
                 <div class="col-md-12">
-                    <ul class="breadcrumb">
-                        <li>
-                        </li>
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    </ul>
+                    
                 </div>
 
 

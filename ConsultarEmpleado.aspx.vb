@@ -13,7 +13,6 @@ Partial Class ConsultarEmpleado
     End Sub
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Label1.Text = "Bienvenido (a): " + Session("EMAIL")
         GridView1.Visible = False
         If Session("usuarios") <> "admin" Then
             Response.Write("<script>alert('Accesso denegado.')</script>")

@@ -100,7 +100,7 @@
                                                 </tr>
                                             </itemtemplate>
                                         </asp:Repeater>
-                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PROGRA4ConnectionString_Andrey %>"></asp:SqlDataSource>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:lt-gmonge.PROGRA4.dbo %>"></asp:SqlDataSource>
                                     </tbody>
                                     <tfoot>
                                         <tr>

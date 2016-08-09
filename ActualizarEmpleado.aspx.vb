@@ -28,8 +28,13 @@ Partial Class ActualizarEmpleado
 
 
     Protected Sub btn_actualizar_emp_Click(sender As Object, e As EventArgs) Handles btn_actualizar_emp.Click
-        Actualizar_Empleado(txt_nombre.Text, txt_primer_apell.Text, txt_seg_apell.Text, txt_email.Text, txt_busca_emp.Text)
-        Response.Write("<script>alert('Empleado Actualizado correctamente.')</script>")
+        If DatoRepetidoDB("Personas", "email", txt_email.Text) = True Then
+            Response.Write("<script>alert('El correo electronico ya esta registrado en la bd')</script>")
+
+        Else
+            Actualizar_Empleado(txt_nombre.Text, txt_primer_apell.Text, txt_seg_apell.Text, txt_email.Text, txt_busca_emp.Text)
+            Response.Write("<script>alert('Empleado Actualizado correctamente.')</script>")
+        End If
     End Sub
 
 
@@ -39,7 +44,7 @@ Partial Class ActualizarEmpleado
         Dim DsPersonas As New DataSet
 
 
-        Conexion = New OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=PROGRA4_V2;Data Source=FOFO\FOFO")
+        Conexion = New OleDbConnection("Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=PROGRA4;Data Source=LT-GMONGE")
         Conexion.Open()
 
         If txt_busca_emp.Text() = "" Then
@@ -63,7 +68,6 @@ Partial Class ActualizarEmpleado
     End Sub
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Label1.Text = "Bienvenido (a): " + Session("EMAIL")
         If Session("usuarios") <> "admin" Then
             Response.Write("<script>alert('Accesso denegado.')</script>")
 

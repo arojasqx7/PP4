@@ -48,17 +48,41 @@
     <div id="top">
         <div class="container">
             <div class="col-md-6 offer" data-animate="fadeInDown">
-                <p>Llámanos ahora: (506) 8888-8888 / (506) 2222-2222</p>
+                <p>Llámanos ahora: (506) 8888-8888 / (506) 2222-2222
+                </p>
             </div>
             <div class="col-md-6" data-animate="fadeInDown">
-                <ul class="menu">
+               <% Try %>
+                    <% If Session("usuarios").ToString = " " Then %>
+                      <ul class="menu">
                     <li><a href="Login.aspx">Login</a>
                     </li>
                     <li><a href="Registrarse.aspx">Registrarse</a>  <!-- Test lnk -->
                     </li>
                     <li><a href="Contacto.aspx">Contáctenos</a>
                     </li>
-                </ul>
+                    <li>
+                    </li>
+                </ul>    
+                    <%Else If Session("usuarios").ToString = "admin" Or Session("usuarios").ToString = "empleado" Or Session("usuarios").ToString = "cliente" Then %>
+                     <ul class="menu">
+                    <li><a href="Logout.aspx">Logout</a>
+                    </li>
+                    <li><a href="Registrarse.aspx">Registrarse</a>  <!-- Test lnk -->
+                    </li>
+                    <li><a href="Contacto.aspx">Contáctenos</a>
+                    </li>
+                         <li><a href="Perfil.aspx">Perfil</a>
+                    </li>
+                       <li><asp:Label ID="Label1"   runat="server" Text="Label"></asp:Label></li>
+                    
+                </ul>    
+                    <%End If%>
+                
+               <% Catch ex As Exception %>
+                    <% Response.Redirect("Inicio.aspx") %>
+               <% End Try %>
+                
             </div>
         </div>
 
@@ -157,8 +181,10 @@
                     </li>
 
                 <li class="dropdown yamm-fw"> <a href="QuienesSomos.aspx" data-hover="dropdown" data-delay="200"> ¿Quiénes somos?</a> </li>
+               <% If Session("usuarios").ToString = "admin" Or Session("usuarios").ToString = "empleado" Then %>
                 <li class="dropdown yamm-fw"> <a href="Admin.aspx" data-hover="dropdown" data-delay="200"> Admin</a> </li>
-            </div>
+                <%End If%>
+                    </div>
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
@@ -234,10 +260,10 @@
                         <h4>Categorías</h4>
 
                         <ul>
-                             <li><a href="Categoria.aspx"><strong>Frutas</strong></a></li>
-                             <li><a href="Categoria.aspx"><strong>Verduras</strong></a></li>
-                             <li><a href="Categoria.aspx"><strong>Carnes</strong></a></li>
-                             <li><a href="Categoria.aspx"><strong>Panadería</strong></a></li>
+                             <li><a href="FrutasAcidas.aspx"><strong>Frutas</strong></a></li>
+                             <li><a href="VerdurasVerde1.aspx"><strong>Verduras</strong></a></li>
+                             <li><a href="CarnePollo.aspx"><strong>Carnes</strong></a></li>
+                             <li><a href="PanDulce.aspx"><strong>Panadería</strong></a></li>
                         </ul>
 
                         <hr class="hidden-md hidden-lg">

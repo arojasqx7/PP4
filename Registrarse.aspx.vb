@@ -42,10 +42,9 @@ Partial Class Registrarse
                         Session("FNACIMIENTO") = DS.Tables(0).Rows.Item(0).Item(5).ToString
                         Session("EMAIL") = DS.Tables(0).Rows.Item(0).Item(6).ToString
                         Session("PASSWORD") = DS.Tables(0).Rows.Item(0).Item(7).ToString
+                    Dim id As String = Session("IDPERSONA")
 
-                        Dim id As String = Session("IDPERSONA")
-
-                        SQL = "insert into TELEFONOS (DETALLE,IDPERSONA) values (" & txt_tel.Text & ",'" & id & "')"
+                    SQL = "insert into TELEFONOS (DETALLE,IDPERSONA) values (" & txt_tel.Text & ",'" & id & "')"
                         EjecutaSQL(SQL) 'inserta el telefono en la tabla telefono con el id de persona'
 
                         SQL = "insert into DIRECCIONES (DETALLE,IDPERSONA) values ('" & txt_direccion.Text & "','" & id & "')"

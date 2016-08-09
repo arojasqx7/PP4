@@ -62,6 +62,9 @@
                     </li>
                     <li><a href="Contacto.aspx">Contáctenos</a>
                     </li>
+                    <li><a href="Logout.aspx">Logout</a>
+                    </li>
+                    <li><asp:Label ID="Label1"  runat="server" Text="Label"></asp:Label></li>
                 </ul>
             </div>
         </div>

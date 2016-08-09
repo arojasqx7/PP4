@@ -11,9 +11,9 @@
                 If e.CommandName = "AddToCart" Then
                     cantidad = CType(e.Item.FindControl("txtCantidad"), TextBox)
                     productoid = CType(e.Item.FindControl("ltid"), TextBox)
-                    Insertar_Carrito(productoid.Text, Session("IDPERSONA"), cantidad.Text)
+                    Insertar_Carrito(productoid.Text, Session("IDPERSONA").ToString, cantidad.Text)
                     Response.Write("<script>alert('Producto agregado al carrito de compras.')</script>")
-                    Response.Write("<script>window.location.href='FrutasAcidas.aspx';</script>")
+                    Response.Write("<script>window.location.href='FrutasAcidas2.aspx';</script>")
                 End If
             Catch ex As Exception
                 Response.Write("<script>alert('Error al agregar producto al carrito de compras.')</script>")
@@ -22,7 +22,7 @@
     End Sub
 
     Private Sub FrutasAcidas_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Label1.Text = "Bienvenido (a): " + Session("EMAIL")
+       
         Dim Conteo As New Data.DataSet
         Conteo = ContarCarrito(Session("IDPERSONA"))
         conteol.Text = Conteo.Tables(0).Rows(0).Item(0).ToString()

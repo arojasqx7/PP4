@@ -24,7 +24,6 @@ Partial Class VerdurasDeRaiz1
     End Sub
 
     Private Sub VerdurasDeRaiz1_Load(sender As Object, e As EventArgs) Handles Me.Load
-        Label1.Text = "Bienvenido (a): " + Session("EMAIL")
         Dim Conteo As New Data.DataSet
         Conteo = ContarCarrito(Session("IDPERSONA"))
         conteol.Text = Conteo.Tables(0).Rows(0).Item(0).ToString()

@@ -45,9 +45,7 @@
             <div class="container">
 
                 <div class="col-md-12">
-                    <ul class="breadcrumb">
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    </ul>
+                    
                 </div>
 
                 <div class="col-md-3">
@@ -173,17 +171,10 @@
                                 </div>
                             </itemtemplate>
                         </asp:Repeater>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PROGRA4ConnectionString_Andrey %>" SelectCommand="SELECT * FROM [PRODUCTOS] WHERE ([TIPO] = @TIPO)">
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:lt-gmonge.PROGRA4.dbo %>" SelectCommand="SELECT * FROM [PRODUCTOS] WHERE ([TIPO] = @TIPO)">
                             <SelectParameters>
                                 <asp:QueryStringParameter DefaultValue="Fruta Dulce" Name="TIPO" QueryStringField="Fruta Dulce" Type="String" />
                             </SelectParameters>
-                        </asp:SqlDataSource>
-                </div>
-                    <!-- /.products -->
-                    <div class="pages">
-                            <p class="loadMore">
-                            <a href="FrutasDulces2.aspx" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Cargar másFruta Dulce" Type="String" />
-                             </SelectParameters>
                         </asp:SqlDataSource>
                 </div>
                     <!-- /.products -->

@@ -18,6 +18,9 @@ Partial Class Login
                 Session("EMAIL") = DS.Tables(0).Rows.Item(0).Item(6).ToString
                 Session("PASSWORD") = DS.Tables(0).Rows.Item(0).Item(7).ToString
                 Session("ISDELETED") = DS.Tables(0).Rows.Item(0).Item(8).ToString
+                Dim DStel As New Data.DataSet
+                DStel = CargarTelefonoDB(Session("IDPERSONA").ToString)
+                Session("TELEFONO") = DStel.Tables(0).Rows.Item(0).Item(0).ToString
 
                 Dim id As String = Session("IDPERSONA")
                 'se valida que la persona tenga un rol y que este activo. En caso de no tener un rol o estar inactivo no podra ingresar'
@@ -30,25 +33,32 @@ Partial Class Login
 
                     Else
                         Session.Clear()
-                        Response.Redirect("Contacto.aspx")
+                        Response.Redirect("Inicio.aspx")
                     End If
                 End If
                 'se valida el rol de la persona. Dependiendo de esto tendra accesso a ciertas paginas.'
                 rol = Session("IDROL")
                 If rol = "1" Then
                     Session.Add("usuarios", "admin")
-                    Response.Redirect("Admin.aspx")
+                    Response.Redirect("inicio.aspx")
 
                 Else
                     If rol = "2" Then
                         Session.Add("usuarios", "empleado")
-                        Response.Redirect("admin.aspx")
+                        Response.Redirect("inicio.aspx")
                     Else
                         If rol = "3" Then
 
                             Session.Add("usuarios", "cliente")
                             Response.Redirect("Inicio.aspx")
+
+                        Else
+                            Session.Clear()
+                            Response.Redirect("Inicio.aspx")
+
                         End If
+
+
 
                     End If
                 End If
@@ -62,3 +72,4 @@ Partial Class Login
     End Sub
 
 End Class
+

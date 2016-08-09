@@ -44,13 +44,11 @@
 
         <div id="content">
             <div class="container">
-
+                 
                 <div class="col-md-12">
-                    <ul class="breadcrumb">
-                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    </ul>
+                    
                 </div>
-
+                
                 <div class="col-md-3">
                     <!-- *** MENUS Y CATEGORIAS ***
  _________________________________________________________ -->
@@ -147,18 +145,12 @@
                                 <br /> <br /> <br /> <br /> 
                                 <br />  
                                 <div class="text">
-                                    <br />
-                                    <br /> 
+                                    <br /> <br /> 
                                     <br /> 
                                     <p class="price">
                                         <asp:TextBox ID="ltid" type="hidden" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "idproducto")%>'></asp:TextBox>
-                                    </p>
-                                    <p class="price">
-                                        <strong>
-                                            <asp:Literal ID="ltdescripcion" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "descripcion")%>'></asp:Literal><br/>
-                                        </strong>
-                                            <asp:Literal ID="ltprecio" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "precio")%>'></asp:Literal>KILO
-                                    </p>
+                                    </p> 
+                                    <p class="price"> <strong><asp:Literal ID="ltdescripcion" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "descripcion")%>'></asp:Literal><br /></strong> <asp:Literal ID="ltprecio" runat="server" Text='<%#DataBinder.Eval(Container.DataItem, "precio")%>'></asp:Literal> KILO</p>
                                     <div style="width:100%;">
                                         <div style="width: 40%; float:left; padding: 2px;">
                                             <asp:TextBox ID="txtCantidad" class="form-control" type="number" min="1" width="50px" runat="server" Text="1"></asp:TextBox>
@@ -172,7 +164,7 @@
                         </div>
                             </itemtemplate>
                             </asp:Repeater>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PROGRA4ConnectionString_Andrey %>" SelectCommand="SELECT * FROM [PRODUCTOS] WHERE ([TIPO] = @TIPO)" >
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:lt-gmonge.PROGRA4.dbo %>" SelectCommand="SELECT * FROM [PRODUCTOS] WHERE ([TIPO] = @TIPO)" >
                             <SelectParameters>
                                 <asp:QueryStringParameter DefaultValue="Fruta Acida" Name="TIPO" QueryStringField="Fruta Acida" Type="String" />
                             </SelectParameters>
