@@ -4,7 +4,7 @@ Public Module ModuloDB
     Dim DB As New Data.OleDb.OleDbConnection
     Public Sub ConectarDB()
         DB.Close()
-        DB.ConnectionString = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=PROGRA4_V2;Data Source=FOFO\FOFO"
+        DB.ConnectionString = "Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=PROGRA4;Data Source=LT-GMONGE"
         DB.Open()
     End Sub
 
@@ -17,6 +17,16 @@ Public Module ModuloDB
         Dim DS As New Data.DataSet
 
         SQL = "select * from PERSONAS where  EMAIL = '" & Valor & "' and PASSWORD = '" & Valor1 & "'"
+
+        LlenarDS(DS, SQL)
+
+        Return DS
+    End Function
+    Public Function CargarTelefonoDB(ByVal Valor As String) As Data.DataSet
+        Dim SQL As String
+        Dim DS As New Data.DataSet
+
+        SQL = "select telefonos.detalle from Telefonos join personas on TELEFONOS.IDPERSONA = '" & Valor & "' "
 
         LlenarDS(DS, SQL)
 
@@ -126,6 +136,24 @@ Public Module ModuloDB
         Dim DS As New Data.DataSet
 
         SQL = "UPDATE PERSONAS SET NOMBRE =  '" & Valor0 & "' , APELLIDO1 =  '" & Valor1 & "'  , APELLIDO2 =  '" & Valor2 & "'  , EMAIL=  '" & Valor3 & "' WHERE CEDULA = '" & Valor4 & "'"
+        LlenarDS(DS, SQL)
+
+        Return DS
+    End Function
+    Public Function Actualizar_Telefono(ByVal Valor0 As String, ByVal Valor1 As String) As Data.DataSet
+        Dim SQL As String
+        Dim DS As New Data.DataSet
+
+        SQL = "UPDATE TELEFONOS SET DETALLE =  '" & Valor0 & "'  WHERE IDPERSONA = '" & Valor1 & "'"
+        LlenarDS(DS, SQL)
+
+        Return DS
+    End Function
+    Public Function Actualizar_Usuario(ByVal Valor0 As String, ByVal Valor5 As String) As Data.DataSet
+        Dim SQL As String
+        Dim DS As New Data.DataSet
+
+        SQL = "UPDATE PERSONAS SET PASSWORD =  '" & Valor0 & "' WHERE CEDULA = '" & Valor5 & "'"
         LlenarDS(DS, SQL)
 
         Return DS
